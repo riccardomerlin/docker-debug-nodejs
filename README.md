@@ -13,7 +13,7 @@ Getting started
 ---------------
 ### Download the project
 ```bash
-$ git clone <git_url>
+$ git clone https://github.com/riccardomerlin/docker-debug-nodejs
 ```
 ### Run the app in a docker container
 ```bash
