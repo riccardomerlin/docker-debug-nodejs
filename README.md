@@ -18,8 +18,8 @@ $ git clone https://github.com/riccardomerlin/docker-debug-nodejs
 ### Run the app in a docker container
 ```bash
 $ cd docker-debug-nodejs
-$ docker build -t docker-debug-nodejs:latest .
-$ docker run -p 3000:3000 docker-debug-nodejs:latest
+$ docker build -t docker-debug-nodejs .
+$ docker run -p 3000:3000 docker-debug-nodejs
 ```
 Open a browser to `http://localhost:3000` and the page should display
 `Hello Docker World!`.
