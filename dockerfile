@@ -2,7 +2,7 @@ FROM node:8-slim
 
 WORKDIR /my-server
 
-COPY . /my-server
+COPY . .
 
 RUN npm install -g nodemon
 RUN npm install
