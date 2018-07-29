@@ -13,12 +13,6 @@
       "localRoot": "${workspaceFolder}",
       "remoteRoot": "/my-server",
       "protocol": "inspector"
-    },
-    {
-      "type": "node",
-      "request": "launch",
-      "name": "Launch Program",
-      "program": "${workspaceFolder}/index.js"
     }
   ]
 }
