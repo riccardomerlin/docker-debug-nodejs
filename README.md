@@ -18,14 +18,21 @@ $ git clone https://github.com/riccardomerlin/docker-debug-nodejs
 ### Run the app in a docker container
 ```bash
 $ cd docker-debug-nodejs
-$ docker build -t docker-debug-nodejs .
-$ docker run -p 3000:3000 docker-debug-nodejs
+$ docker build --tag docker-debug-nodejs:latest .
+$ docker run --publish 3000:3000  docker-debug-nodejs:latest
 ```
 Open a browser to `http://localhost:3000` and the page should display
 `Hello Docker World!`.
 
 ### Run the app in debug mode in a Docker container
-1. Run the app using `docker-compose`
+1. Run the following command from the shell to start
+a new container instance with debug port (9222) exposed
+    ```bash
+    $ docker run -p 3000:3000 -p 9222:9222 --entrypoint=/bin/bash docker-debug-nodejs:latest -c "npm run debug"
+    ```
+    or alternatively
+
+    start the container using `docker-compose`
     ```bash
     $ docker-compose up
     ```
@@ -43,6 +50,8 @@ status bar at the very bottom of the window.
 debugger in VS Code stopping in the break point set in the previous step.
 
 ### Hot-reload
+_Note: it works only when running the container with `docker-compose`_
+
 Edit the following line in [/src/index.js](/src/index.js)
 ```javascript
 res.end('Hello Docker World!')
